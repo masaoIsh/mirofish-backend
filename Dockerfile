@@ -25,5 +25,8 @@ COPY . .
 
 EXPOSE 3000 5001
 
-# 同时启动前后端（开发模式）
-CMD ["npm", "run", "dev"]
+# Allow Railway/containers to mount persistent uploads
+VOLUME ["/app/backend/uploads"]
+
+# 默认只启动后端（用于始终在线部署）
+CMD ["npm", "run", "backend"]
