@@ -25,8 +25,5 @@ COPY . .
 
 EXPOSE 3000 5001
 
-# Allow Railway/containers to mount persistent uploads
-VOLUME ["/app/backend/uploads"]
-
 # 默认只启动后端（用于始终在线部署）
 CMD ["npm", "run", "backend"]
